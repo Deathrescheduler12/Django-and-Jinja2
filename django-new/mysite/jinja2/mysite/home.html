@@ -1,0 +1,35 @@
+{% extends "mysite/base.html" %}
+
+{% block style %}
+<style>
+    .btn-holder {
+        
+        position: relative;
+        top: 140px;
+        left: 40%;
+
+    }
+    .btn {
+        border-radius: 5%;
+        background-color: grey;
+
+        font-size: large;
+
+        height: 50px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="btn-holder">
+    <button class="btn" onclick="click_me()">View Polls</button>
+    <button class="btn bait" disabled>Free money</button>
+</div>
+
+<script>
+    function click_me(){
+        location.href = "{{url('polls:questions')}}"
+    }
+</script>
+{% endblock %}

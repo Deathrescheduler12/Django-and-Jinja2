@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                background-color: black;
+            }
+            .logo {
+                background-color: white;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .logo > h1 {
+                position: relative;
+
+                left: 45%;
+            }
+        </style>
+
+        {% block style %}
+        {% endblock %}
+    </head>
+    <body>
+        <header class="logo"><h1>Polls</h1></header>
+
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

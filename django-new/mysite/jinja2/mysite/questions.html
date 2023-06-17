@@ -1,0 +1,47 @@
+{% extends "mysite/base.html" %}
+{% from "mysite/modules/main.module.html" import question as q_d %}
+
+{% block style %}
+<style>
+    .question {
+        background-color: grey;
+        position: relative;
+
+        left: 40%;
+        width: 25%;
+        height: 150px;
+
+        border-radius: 2%;
+        
+        margin-top: 10px;
+    }
+    .q_text {
+        font-size: xx-large;
+
+        position: relative;
+        left: 10%;
+    }
+    footer {
+        position: absolute;
+        top: 130px;
+        font-size: small;
+    }
+    .choice {
+        display: block;
+    }
+    .label {
+        position: relative;
+        bottom: 16px;
+
+        left: 20px;
+    }
+</style>
+{% endblock %}
+{% block body %}
+
+{% for q in qs %}
+
+{{ q_d(q.question_text, q.pub_date, q.choice_set.all()) }}
+
+{% endfor %}
+{% endblock %}

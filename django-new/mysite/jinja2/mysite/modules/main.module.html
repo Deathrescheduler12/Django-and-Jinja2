@@ -1,0 +1,12 @@
+{% macro question(text, date, choices) -%}
+<div class="question">
+    <span class="q_text">{{text}}</span>
+
+    {% for choice in choices %}
+    <input class="choice" type="radio" id="{{loop.index0}}" name="choice_{{text}}">
+    <label for="{{loop.index0}}" class="label">{{choice}}</label>
+    {% endfor %}
+
+    <footer>{{date}}</footer>
+</div>
+{% endmacro %}
